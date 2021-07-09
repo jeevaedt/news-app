@@ -71,7 +71,12 @@ export default function HomeContainer() {
       {!pageLoadingStatus ?
         <Container style={{ margin: 10, alignItems: "center", maxWidth: "100%" }}>
           <ScrollView centerContent={true} contentInsetAdjustmentBehavior="automatic" showsVerticalScrollIndicator={false}>
-            {news.map((eachNews, index) => <Card key={index} news={eachNews} />)}
+            {news.length ?
+              news.map((eachNews, index) => <Card key={index} news={eachNews} />)
+              : <View style={styles.container}>
+                <Text>No such data...</Text>
+              </View>
+            }
           </ScrollView>
         </Container> :
         <View style={styles.container}>
