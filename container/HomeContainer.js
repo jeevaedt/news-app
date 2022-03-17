@@ -59,7 +59,6 @@ export default function HomeContainer() {
       url: 'https://gnews.io/api/v4/top-headlines?&token=4c53e38baf4e4cc3ab33144f8c404212',
       params: { lang: "ta", q: appContext.searchValue || "" }
     }).then((response) => {
-      console.log(response.data.articles);
       setPageLoadingStatus(false)
       setNews(response.data.articles)
     })
